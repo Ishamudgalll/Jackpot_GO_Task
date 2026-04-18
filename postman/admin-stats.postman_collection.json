@@ -1,1 +1,128 @@
+{
+  "info": {
+    "name": "Admin Stats API",
+    "description": "Simple requests for the admin stats endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Gross Gaming Revenue",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/gross_gaming_rev?from={{from}}&to={{to}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "gross_gaming_rev"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "{{from}}"
+            },
+            {
+              "key": "to",
+              "value": "{{to}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Daily Wager Volume",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/daily_wager_volume?from={{from}}&to={{to}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "daily_wager_volume"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "{{from}}"
+            },
+            {
+              "key": "to",
+              "value": "{{to}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "User Wager Percentile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/user/{{user_id}}/wager_percentile?from={{from}}&to={{to}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "{{user_id}}",
+            "wager_percentile"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "{{from}}"
+            },
+            {
+              "key": "to",
+              "value": "{{to}}"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "token",
+      "value": "Bearer secret-admin-token"
+    },
+    {
+      "key": "from",
+      "value": "2026-01-01"
+    },
+    {
+      "key": "to",
+      "value": "2026-03-01"
+    },
+    {
+      "key": "user_id",
+      "value": "65d7665fcb31ee98fb584e4a"
+    }
+  ]
+}
+
 
